@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 4%;
+    --foreground: 0 0% 95%;
+
+    --card: 0 0% 7%;
+    --card-foreground: 0 0% 95%;
+
+    --popover: 0 0% 7%;
+    --popover-foreground: 0 0% 95%;
+
+    --primary: 180 100% 50%;
+    --primary-foreground: 0 0% 4%;
+
+    --secondary: 269 100% 50%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 0 0% 12%;
+    --muted-foreground: 0 0% 55%;
+
+    --accent: 269 100% 50%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 15%;
+    --input: 0 0% 15%;
+    --ring: 180 100% 50%;
+
+    --radius: 0.75rem;
+
+    --neon-blue: 180 100% 50%;
+    --neon-purple: 269 100% 50%;
+    --glass-bg: 0 0% 100% / 0.05;
+    --glass-border: 0 0% 100% / 0.1;
+    --glow-blue: 0 0 20px hsl(180 100% 50% / 0.4), 0 0 40px hsl(180 100% 50% / 0.2);
+    --glow-purple: 0 0 20px hsl(269 100% 50% / 0.4), 0 0 40px hsl(269 100% 50% / 0.2);
+
+    --sidebar-background: 0 0% 6%;
+    --sidebar-foreground: 0 0% 95%;
+    --sidebar-primary: 180 100% 50%;
+    --sidebar-primary-foreground: 0 0% 4%;
+    --sidebar-accent: 0 0% 12%;
+    --sidebar-accent-foreground: 0 0% 95%;
+    --sidebar-border: 0 0% 15%;
+    --sidebar-ring: 180 100% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  .glass {
+    @apply bg-glass border border-glass-border backdrop-blur-xl rounded-xl;
+  }
+
+  .glass-card {
+    @apply bg-glass border border-glass-border backdrop-blur-xl rounded-2xl p-6 transition-all duration-300;
+  }
+
+  .glass-card:hover {
+    border-color: hsl(var(--neon-blue) / 0.3);
+    box-shadow: var(--glow-blue);
+  }
+
+  .neon-text {
+    @apply text-primary;
+    text-shadow: 0 0 10px hsl(var(--neon-blue) / 0.5), 0 0 20px hsl(var(--neon-blue) / 0.3);
+  }
+
+  .neon-text-purple {
+    @apply text-secondary;
+    text-shadow: 0 0 10px hsl(var(--neon-purple) / 0.5), 0 0 20px hsl(var(--neon-purple) / 0.3);
+  }
+
+  .neon-btn {
+    @apply relative px-8 py-3 rounded-lg font-semibold text-primary-foreground bg-primary transition-all duration-300;
+    box-shadow: 0 0 15px hsl(var(--neon-blue) / 0.4);
+  }
+
+  .neon-btn:hover {
+    box-shadow: 0 0 25px hsl(var(--neon-blue) / 0.6), 0 0 50px hsl(var(--neon-blue) / 0.3);
+    transform: translateY(-2px);
+  }
+
+  .neon-btn-outline {
+    @apply relative px-8 py-3 rounded-lg font-semibold border border-primary text-primary bg-transparent transition-all duration-300;
+  }
+
+  .neon-btn-outline:hover {
+    @apply bg-primary/10;
+    box-shadow: 0 0 20px hsl(var(--neon-blue) / 0.3);
+    transform: translateY(-2px);
+  }
+
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary;
+  }
+
+  .section-padding {
+    @apply py-20 md:py-28 px-4;
+  }
+
+  .gradient-bg {
+    background: radial-gradient(ellipse at 20% 50%, hsl(var(--neon-blue) / 0.08) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 50%, hsl(var(--neon-purple) / 0.08) 0%, transparent 50%);
+  }
+}
