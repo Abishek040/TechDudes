@@ -3,7 +3,7 @@ import SectionHeading from "@/components/SectionHeading";
 
 const team = [
   {
-    name: "Abishek",
+    name: "Abishek A",
     role: "Founder & Director",
     desc: "Leads TechDudes with a vision to simplify technology. Specializes in full-stack development, IoT systems, and building scalable digital solutions.",
   },
